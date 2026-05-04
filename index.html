@@ -42,31 +42,99 @@
     .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
 
     header {
-      padding: 72px 0 34px;
+      padding: 64px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(330px, .7fr);
+      gap: 44px;
+      align-items: center;
     }
 
     h1 {
       margin: 0;
-      font-size: clamp(58px, 10vw, 112px);
-      line-height: .88;
-      letter-spacing: -0.075em;
-      max-width: 980px;
+      font-size: clamp(50px, 7.6vw, 92px);
+      line-height: .98;
+      letter-spacing: -0.038em;
+      max-width: 760px;
+      font-weight: 760;
     }
 
     .hero-label {
-      margin: 20px 0 0;
-      font-size: clamp(24px, 3.6vw, 42px);
+      margin: 16px 0 0;
+      font-size: clamp(24px, 3.2vw, 38px);
       line-height: 1.08;
-      letter-spacing: -0.045em;
-      font-weight: 760;
+      letter-spacing: -0.028em;
+      font-weight: 720;
       color: var(--accent);
     }
 
     .lead {
       margin: 18px 0 0;
-      max-width: 780px;
+      max-width: 760px;
       color: var(--muted);
-      font-size: clamp(18px, 2.2vw, 22px);
+      font-size: clamp(17px, 1.8vw, 21px);
+    }
+
+    .hero-card {
+      padding: 28px;
+      min-height: 300px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-card::before {
+      content: "";
+      position: absolute;
+      inset: -90px -80px auto auto;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(111,79,216,.18), transparent 68%);
+    }
+
+    .hero-card-kicker {
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 760;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-card-title {
+      margin-top: 12px;
+      font-size: clamp(28px, 3.2vw, 42px);
+      line-height: 1.02;
+      letter-spacing: -0.045em;
+      font-weight: 790;
+      color: var(--ink);
+    }
+
+    .hero-card p {
+      margin: 14px 0 0;
+      color: var(--muted);
+      font-size: 15.5px;
+    }
+
+    .hero-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 9px;
+      margin-top: 24px;
+    }
+
+    .hero-pills span {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      color: #304252;
+      font-size: 13px;
+      font-weight: 650;
     }
 
     .actions {
@@ -236,8 +304,14 @@
       border-top: 1px solid var(--line);
     }
 
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; gap: 26px; }
+      .hero-card { min-height: 0; }
+    }
+
     @media (max-width: 760px) {
       header { padding-top: 44px; }
+      h1 { letter-spacing: -0.03em; }
       .summary, .grid, .themes { grid-template-columns: 1fr; }
       .section-head { align-items: start; flex-direction: column; }
       .stat { padding: 20px; }
@@ -246,15 +320,32 @@
 </head>
 <body>
   <header class="wrap">
-    <h1>Calvin Chan</h1>
-    <p class="hero-label">Mobile Games Portfolio</p>
-    <p class="lead">Selected examples from mobile games and apps I contributed to across production, product delivery, technical leadership and cross-functional execution. My work included mobile products featured by the Apple App Store and/or Google Play in every year from 2009 to 2019, spanning branded freemium games, casual titles, education apps and live mobile experiences.</p>
-    <nav class="actions" aria-label="Primary links">
-      <a class="button primary" href="mailto:calvin@infunity.com">calvin@infunity.com</a>
-      <a class="button" href="https://www.linkedin.com/in/calvinchanht/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      <a class="button" href="https://infunity.com/" target="_blank" rel="noopener noreferrer">Infunity.com</a>
-      <a class="button" href="#work">View work</a>
-    </nav>
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <h1>Calvin Chan</h1>
+        <p class="hero-label">Mobile Games Portfolio</p>
+        <p class="lead">Selected examples from mobile games and apps I contributed to across production, product delivery, technical leadership and cross-functional execution. My work included mobile products featured by the Apple App Store and/or Google Play in every year from 2009 to 2019, spanning branded freemium games, casual titles, education apps and live mobile experiences.</p>
+        <nav class="actions" aria-label="Primary links">
+          <a class="button primary" href="mailto:calvin@infunity.com">calvin@infunity.com</a>
+          <a class="button" href="https://www.linkedin.com/in/calvinchanht/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a class="button" href="https://infunity.com/" target="_blank" rel="noopener noreferrer">Infunity.com</a>
+          <a class="button" href="#work">View work</a>
+        </nav>
+      </div>
+      <aside class="hero-card panel" aria-label="Portfolio focus">
+        <div>
+          <div class="hero-card-kicker">Portfolio focus</div>
+          <div class="hero-card-title">Apple App Store &amp; Google Play featured work</div>
+          <p>Selected mobile products across licensed IP, casual games, music, education and live mobile experiences.</p>
+        </div>
+        <div class="hero-pills" aria-label="Experience tags">
+          <span>Licensed IP</span>
+          <span>Freemium mobile</span>
+          <span>Product delivery</span>
+          <span>Technical leadership</span>
+        </div>
+      </aside>
+    </div>
   </header>
 
   <main class="wrap">
