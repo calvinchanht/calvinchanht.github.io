@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Calvin Chan — Mobile Games Portfolio</title>
+  <meta name="description" content="Selected mobile games and apps Calvin Chan contributed to across production, product delivery, technical leadership and cross-functional execution." />
+  <meta property="og:title" content="Calvin Chan — Mobile Games Portfolio" />
+  <meta property="og:description" content="Selected mobile games and apps across branded freemium titles, casual games, education apps and live mobile experiences." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f8fb;
+      --paper: #ffffff;
+      --ink: #15202b;
+      --muted: #5d6b7a;
+      --line: #dce4ee;
+      --accent: #255f91;
+      --accent-2: #6f4fd8;
+      --accent-soft: #eaf3fb;
+      --shadow: 0 18px 50px rgba(20, 36, 58, .10);
+      --radius: 22px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(37, 95, 145, .17), transparent 34rem),
+        radial-gradient(circle at 90% 8%, rgba(111, 79, 216, .13), transparent 28rem),
+        var(--bg);
+      color: var(--ink);
+      line-height: 1.55;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .wrap { width: min(1120px, calc(100% - 36px)); margin: 0 auto; }
+
+    header {
+      padding: 72px 0 34px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255,255,255,.72);
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 22px;
+    }
+
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-2)); }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(42px, 7vw, 78px);
+      line-height: .96;
+      letter-spacing: -0.06em;
+      max-width: 900px;
+    }
+
+    .lead {
+      margin: 24px 0 0;
+      max-width: 780px;
+      color: var(--muted);
+      font-size: clamp(18px, 2.2vw, 22px);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 30px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 11px 16px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: var(--paper);
+      color: var(--ink);
+      box-shadow: 0 8px 22px rgba(20,36,58,.06);
+      font-weight: 650;
+    }
+
+    .button.primary {
+      border: 0;
+      background: linear-gradient(135deg, var(--accent), var(--accent-2));
+      color: white;
+    }
+
+    main { padding: 12px 0 64px; }
+
+    .panel {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(220, 228, 238, .9);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(8px);
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      overflow: hidden;
+      margin: 18px 0 34px;
+    }
+
+    .stat {
+      padding: 24px;
+      background: rgba(255,255,255,.72);
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 30px;
+      line-height: 1;
+      letter-spacing: -0.04em;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 20px;
+      margin: 38px 0 18px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(28px, 4vw, 42px);
+      letter-spacing: -0.04em;
+    }
+
+    .section-note { margin: 0; color: var(--muted); max-width: 620px; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      overflow: hidden;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      box-shadow: 0 12px 34px rgba(20,36,58,.07);
+    }
+
+    .thumb {
+      position: relative;
+      aspect-ratio: 16 / 9;
+      background: linear-gradient(135deg, var(--accent-soft), #f9f6ff);
+      overflow: hidden;
+    }
+
+    .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      filter: saturate(1.05);
+      transform: scale(1.01);
+    }
+
+    .badge {
+      position: absolute;
+      left: 14px;
+      top: 14px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(10, 18, 28, .74);
+      color: white;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+
+    .body { padding: 18px; }
+
+    .body h3 {
+      margin: 0 0 8px;
+      font-size: 21px;
+      line-height: 1.18;
+      letter-spacing: -0.03em;
+    }
+
+    .body p { margin: 0 0 14px; color: var(--muted); }
+
+    .links { display: flex; flex-wrap: wrap; gap: 10px; }
+
+    .text-link {
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .themes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .theme {
+      padding: 18px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.76);
+    }
+
+    .theme h3 { margin: 0 0 6px; font-size: 17px; }
+    .theme p { margin: 0; color: var(--muted); font-size: 14px; }
+
+    footer {
+      padding: 34px 0 48px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .fine-print {
+      margin-top: 18px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    @media (max-width: 760px) {
+      header { padding-top: 44px; }
+      .summary, .grid, .themes { grid-template-columns: 1fr; }
+      .section-head { align-items: start; flex-direction: column; }
+      .stat { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Calvin Chan · Mobile games, product delivery & production</div>
+    <h1>Selected mobile games and apps.</h1>
+    <p class="lead">A public showcase of mobile titles I contributed to across production, product delivery, technical leadership and cross-functional execution, including branded freemium games, casual titles, education apps and live mobile experiences.</p>
+    <nav class="actions" aria-label="Primary links">
+      <a class="button primary" href="https://www.linkedin.com/in/calvinchanht/">LinkedIn</a>
+      <a class="button" href="https://infunity.com/">Infunity.com</a>
+      <a class="button" href="#work">View work</a>
+    </nav>
+  </header>
+
+  <main class="wrap">
+    <section class="summary panel" aria-label="Experience summary">
+      <div class="stat"><strong>15+</strong><span>App Store / Google Play featured products and mobile experiences</span></div>
+      <div class="stat"><strong>10+</strong><span>Cross-functional team members coordinated across design, engineering, QA and stakeholders</span></div>
+      <div class="stat"><strong>20+</strong><span>Developers led earlier across a multi-title mobile/software portfolio</span></div>
+    </section>
+
+    <section id="work" aria-labelledby="work-title">
+      <div class="section-head">
+        <div>
+          <h2 id="work-title">Featured work</h2>
+          <p class="section-note">Public proof links are included where available. The projects below include work completed with previous studios and teams.</p>
+        </div>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=sVO6RuUsJzU" aria-label="Watch He-Man: Tappers of Grayskull video">
+            <img src="https://img.youtube.com/vi/sVO6RuUsJzU/hqdefault.jpg" alt="He-Man: Tappers of Grayskull video thumbnail" loading="lazy" />
+            <span class="badge">Licensed IP · Mobile</span>
+          </a>
+          <div class="body">
+            <h3>He-Man: Tappers of Grayskull</h3>
+            <p>Branded freemium mobile title; useful evidence for licensed IP delivery, engagement loops and mobile production experience.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=sVO6RuUsJzU">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=6AXgkxJBOLw" aria-label="Watch Astro Boy Siege: Alien Attack video">
+            <img src="https://img.youtube.com/vi/6AXgkxJBOLw/hqdefault.jpg" alt="Astro Boy Siege: Alien Attack video thumbnail" loading="lazy" />
+            <span class="badge">Licensed IP · Action</span>
+          </a>
+          <div class="body">
+            <h3>Astro Boy Siege: Alien Attack</h3>
+            <p>Mobile game work connected to branded IP, cross-functional delivery and player-facing quality under platform constraints.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=6AXgkxJBOLw">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=y6U8HhvNZDQ" aria-label="Watch Garfield's Defense video">
+            <img src="https://img.youtube.com/vi/y6U8HhvNZDQ/hqdefault.jpg" alt="Garfield's Defense video thumbnail" loading="lazy" />
+            <span class="badge">Licensed IP · Defense</span>
+          </a>
+          <div class="body">
+            <h3>Garfield's Defense: Attack of the Food</h3>
+            <p>Casual mobile game example showing licensed IP execution, mobile gameplay loops and team-based delivery.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=y6U8HhvNZDQ">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=2HytXqVdKKA" aria-label="Watch Garfield's Defense 2 video">
+            <img src="https://img.youtube.com/vi/2HytXqVdKKA/hqdefault.jpg" alt="Garfield's Defense 2 video thumbnail" loading="lazy" />
+            <span class="badge">Sequel · Iteration</span>
+          </a>
+          <div class="body">
+            <h3>Garfield's Defense 2: The Food Invaders Strike Back</h3>
+            <p>Sequel-oriented mobile delivery example, relevant to iteration, content follow-through and improving an established formula.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=2HytXqVdKKA">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=Vkp1mowrd-w" aria-label="Watch Hello Kitty Music Party video">
+            <img src="https://img.youtube.com/vi/Vkp1mowrd-w/hqdefault.jpg" alt="Hello Kitty Music Party video thumbnail" loading="lazy" />
+            <span class="badge">Licensed IP · Music</span>
+          </a>
+          <div class="body">
+            <h3>Hello Kitty Music Party</h3>
+            <p>Licensed rhythm/music mobile experience; relevant to polished UX, content feel and brand-sensitive delivery.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=Vkp1mowrd-w">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=BC9SL9fVgT0" aria-label="Watch Hello Kitty Cafe video">
+            <img src="https://img.youtube.com/vi/BC9SL9fVgT0/hqdefault.jpg" alt="Hello Kitty Cafe video thumbnail" loading="lazy" />
+            <span class="badge">Licensed IP · Casual</span>
+          </a>
+          <div class="body">
+            <h3>Hello Kitty Cafe</h3>
+            <p>Casual mobile title with service/economy-style loops, useful for showing branded game production and player-friendly execution.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=BC9SL9fVgT0">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=b0xCTIiHI0M" aria-label="Watch Ultraman Galaxy video">
+            <img src="https://img.youtube.com/vi/b0xCTIiHI0M/hqdefault.jpg" alt="Ultraman Galaxy video thumbnail" loading="lazy" />
+            <span class="badge">Licensed IP · Mobile</span>
+          </a>
+          <div class="body">
+            <h3>Ultraman Galaxy</h3>
+            <p>Branded mobile game example supporting licensed IP delivery, gameplay execution and cross-functional coordination.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=b0xCTIiHI0M">Watch video</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=DKlvd7TzZWY" aria-label="Watch Groove Planet video">
+            <img src="https://img.youtube.com/vi/DKlvd7TzZWY/hqdefault.jpg" alt="Groove Planet video thumbnail" loading="lazy" />
+            <span class="badge">Music game · Launch</span>
+          </a>
+          <div class="body">
+            <h3>Groove Planet</h3>
+            <p>Music game with public launch coverage; useful proof for mobile launch readiness, engagement loops and store-facing execution.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=DKlvd7TzZWY">Watch video</a><a class="text-link" href="https://www.animocabrands.com/announcement/animoca-brands-launches-groove-planet-music-game-for-android-asx-release">Read launch article</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://apps.apple.com/app/mindful-ocean-coloring/id1443971969" aria-label="Open Mindful Ocean Coloring App Store page">
+            <span class="badge">App Store · UX</span>
+          </a>
+          <div class="body">
+            <h3>Mindful Ocean Coloring</h3>
+            <p>Polished mobile app experience with public App Store proof, relevant to mobile UX, release quality and platform readiness.</p>
+            <div class="links"><a class="text-link" href="https://apps.apple.com/app/mindful-ocean-coloring/id1443971969">View App Store page</a></div>
+          </div>
+        </article>
+
+        <article class="card">
+          <a class="thumb" href="https://www.youtube.com/watch?v=qVXNTkzd-X8" aria-label="Watch Pretty Pet Tycoon video">
+            <img src="https://img.youtube.com/vi/qVXNTkzd-X8/hqdefault.jpg" alt="Pretty Pet Tycoon video thumbnail" loading="lazy" />
+            <span class="badge">Casual · Tycoon</span>
+          </a>
+          <div class="body">
+            <h3>Pretty Pet Tycoon</h3>
+            <p>Casual tycoon/management mobile example, relevant to progression, economy-style loops and mobile product execution.</p>
+            <div class="links"><a class="text-link" href="https://www.youtube.com/watch?v=qVXNTkzd-X8">Watch video</a></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section aria-labelledby="themes-title">
+      <div class="section-head">
+        <div>
+          <h2 id="themes-title">What this work demonstrates</h2>
+          <p class="section-note">The page is intended to support games/product applications with concrete examples behind the CV.</p>
+        </div>
+      </div>
+      <div class="themes">
+        <div class="theme"><h3>Mobile game delivery</h3><p>Planning, coordination, QA/UAT, launch readiness and live issue follow-through across player-facing mobile products.</p></div>
+        <div class="theme"><h3>Licensed IP care</h3><p>Experience shipping branded games where product quality, brand expectations and platform constraints all matter.</p></div>
+        <div class="theme"><h3>Product judgement</h3><p>Engagement, progression, monetisation awareness, feature prioritisation and practical cross-functional execution.</p></div>
+        <div class="theme"><h3>Technical fluency</h3><p>Earlier engineering leadership helps bridge design, product, analytics, APIs, tools and implementation tradeoffs.</p></div>
+        <div class="theme"><h3>Team communication</h3><p>Clear scope, dependencies, acceptance criteria and delivery status across design, engineering, QA and stakeholders.</p></div>
+        <div class="theme"><h3>Portfolio credibility</h3><p>Public links give recruiters and hiring teams a fast way to understand the type and scale of previous work.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap">
+    <div class="fine-print">
+      <strong>Note:</strong> Projects listed include work completed with previous employers and teams. Product names, trademarks, videos, screenshots and associated imagery belong to their respective owners.
+    </div>
+  </footer>
+</body>
+</html>
