@@ -1,4 +1,4 @@
-# Calvin Chan — Mobile Games Portfolio
+# Calvin Chan: Mobile Games Portfolio
 
 Static GitHub Pages portfolio for selected mobile games and apps Calvin contributed to across production, product delivery, technical leadership and cross-functional execution.
 
